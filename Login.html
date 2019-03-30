@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function validate()
+        {
+            if(   document.getElementById("txtName").value == "user@gmail.com"
+               && document.getElementById("txtPassword").value == "123456" )
+            {
+                alert( "validation succeeded" );
+                return true;
+            }
+            else
+            {
+                alert( "validation failed" );
+                return false;
+            }
+        }
+        </script>
+</head>
+
+<body>
+    <form action="./Home.html" autocomplete="off" onsubmit="return validate()" method="POST">
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" id=txtName required pattern="[^]+@[^]+[.][a-z]{2,63}$">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="txtPassword" required>
+
+            <button type="submit" id="btnLogin">Login</button>
+            <button id="btnRegister" onclick="location.href='./Register.html';">Register</button>
+           
+        </div>
+    </form>
+</body>
+
+</html>
